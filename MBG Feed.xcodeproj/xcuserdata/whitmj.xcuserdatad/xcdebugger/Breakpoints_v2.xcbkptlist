@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MBG Feed/MBGMainViewController.swift"
-            timestampString = "469673812.287527"
+            timestampString = "469755048.307604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "downloadImage(_:name:indexPath:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "asynchronousDataFromUrl(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MBG Feed/MBGMainViewController.swift"
-            timestampString = "469673961.476771"
+            timestampString = "469755048.307604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "loadInitialJSON()"
             landmarkType = "5">
             <Locations>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MBG Feed/MBGMainViewController.swift"
-            timestampString = "469673996.909723"
+            timestampString = "469755048.307604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "asynchronousDataFromUrl(_:completion:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "loadInitialJSON()"
             landmarkType = "5">
             <Locations>
                <Location

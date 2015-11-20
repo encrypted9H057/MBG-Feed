@@ -9,9 +9,14 @@
 import UIKit
 
 // The VC class used to display the initial list of articles at startup
+// See README.md for AWS concerns
 class MBGMainViewController: UITableViewController {
 
     // HTTPS URL for the JSON payload representing the list of articles
+    // Surprisingly the HTTPS certificate was rejected by iOS and therefore 
+    // it was necessary to add AWS as an App Transport Security Setting exception 
+    // in info.plist  
+    // See README.md for AWS concerns
     let kArticleJSONURL = "https://s3.amazonaws.com/mbgd/feed/prod-test-7fc12640-6f09-4461-b683-3e55acdfd4f4.json";
     
     // Article JSON realised as an array of dictionaries, etc.
@@ -19,7 +24,6 @@ class MBGMainViewController: UITableViewController {
     
     // Feed images already downloaded are cached for table redraws
     var articleFeedImageCache = [String : UIImage]()
-    
     
     // Download the article feed and tell our tableView to reload
     override func viewDidLoad() {
@@ -35,6 +39,11 @@ class MBGMainViewController: UITableViewController {
         asynchronousDataFromUrl(url, completion: {(data, response, error) in
             if (error != nil) {
                 print(error?.localizedDescription)
+                let title = "Problem fetching articles"
+                let message = "Articles do not appear to be available at this time"
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
             } else {
                 self.articleArray = self.jsonDataToObjects(data!)!
                 print("size is \(self.articleArray.count)")
@@ -64,7 +73,8 @@ class MBGMainViewController: UITableViewController {
             // update on the main thread
             dispatch_async(dispatch_get_main_queue()) { () -> Void in
                 guard let data = data where error == nil
-                    else { return }
+                    else {return} // consider trying the download again. An error message would be annoying
+                
                 print("Finished downloading \"\(url.URLByDeletingPathExtension!.lastPathComponent!)\".")
                 self.articleFeedImageCache[name] = UIImage(data: data)
                 let paths = [indexPath]
@@ -73,26 +83,31 @@ class MBGMainViewController: UITableViewController {
         }
     }
 
-    // Convert from NSData to array of
+    // Convert from NSData to an NSArray of NSDictionaries, etc.
     func jsonDataToObjects(data: NSData) -> NSArray? {
         do {
             return try (
                 NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? NSArray
             )
         } catch let myJSONError {
+            // TODO add UIAlertControl. 
             print(myJSONError)
         }
         return nil
     }
     
+    // There is only one section in the table showing all articles
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
+    // When the app opens this will return 0, and once the article download task has
+    // completed it will repsond with the number of articles
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articleArray.count
     }
     
+    // Return a properly initialized cell. Images are always overwritten
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MBGArticleTVCell") as! MBGArticleTableViewCell
         
@@ -115,7 +130,7 @@ class MBGMainViewController: UITableViewController {
         return cell
     }
     
-    // Dump the image cache
+    // Dump the image cache.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
