@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MBG Feed/MBGMainViewController.swift"
+            timestampString = "469673812.287527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "downloadImage(_:name:indexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MBG Feed/MBGMainViewController.swift"
+            timestampString = "469673961.476771"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "loadInitialJSON()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MBG_Feed.MBGMainViewController.loadInitialJSON (MBG_Feed.MBGMainViewController)() -&gt; ()"
+                  moduleName = "MBG Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whitmj/dev/MBG%20Feed/MBG%20Feed/MBGMainViewController.swift"
+                  timestampString = "469675135.113315"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MBG_Feed.MBGMainViewController.(loadInitialJSON (MBG_Feed.MBGMainViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "MBG Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whitmj/dev/MBG%20Feed/MBG%20Feed/MBGMainViewController.swift"
+                  timestampString = "469675135.113568"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MBG Feed/MBGMainViewController.swift"
+            timestampString = "469673996.909723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "asynchronousDataFromUrl(_:completion:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MBG_Feed.MBGMainViewController.asynchronousDataFromUrl (MBG_Feed.MBGMainViewController)(__ObjC.NSURL, completion : (data : Swift.Optional&lt;__ObjC.NSData&gt;, response : Swift.Optional&lt;__ObjC.NSURLResponse&gt;, error : Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MBG Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whitmj/dev/MBG%20Feed/MBG%20Feed/MBGMainViewController.swift"
+                  timestampString = "469675135.134782"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MBG_Feed.MBGMainViewController.(asynchronousDataFromUrl (MBG_Feed.MBGMainViewController) -&gt; (__ObjC.NSURL, completion : (data : Swift.Optional&lt;__ObjC.NSData&gt;, response : Swift.Optional&lt;__ObjC.NSURLResponse&gt;, error : Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "MBG Feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whitmj/dev/MBG%20Feed/MBG%20Feed/MBGMainViewController.swift"
+                  timestampString = "469675135.134973"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

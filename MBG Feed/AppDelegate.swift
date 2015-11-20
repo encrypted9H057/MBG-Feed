@@ -44,6 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    
+    // At the time of conception Core Data is not necessary but I have choosen to 
+    // include the boilerplate code just the same as it's necessary for the oft requested
+    // feature of working offline.
+    
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {
