@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Article image row
 class MBGFullArticleImageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var articleImageView: UIImageView!

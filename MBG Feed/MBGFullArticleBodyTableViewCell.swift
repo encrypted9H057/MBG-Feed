@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Article body. HTML payload rendered by UIWebView
 class MBGFullArticleBodyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var articleBodyWebView: UIWebView!

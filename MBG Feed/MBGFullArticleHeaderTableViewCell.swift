@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Article metadata row
 class MBGFullArticleHeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var articleTitle: UILabel!
