@@ -49,6 +49,13 @@
 		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>cloudinary.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>mindbodygreen.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>

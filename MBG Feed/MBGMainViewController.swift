@@ -167,6 +167,19 @@ class MBGMainViewController: UITableViewController {
             fullArticleController.image = self.articleFeedImageCache[imageURLString]!
         }
         
+        if (segue.identifier == "MBGWebViewSegue") {
+            
+            let webArticleController = segue.destinationViewController as! MBGWebViewController
+            
+            let iPath = self.tableView.indexPathForSelectedRow
+            
+            // Pass the article id to the new view controller
+            let articleDictionary = articleArray[(iPath?.row)!] as! [String : AnyObject]
+            webArticleController.articleIdString = articleDictionary["id"] as! String;
+            
+            
+        }
+        
     }
 
 }

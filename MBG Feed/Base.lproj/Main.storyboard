@@ -98,7 +98,7 @@
                                     <outlet property="articleAuthor" destination="9lZ-jR-pAX" id="Ofw-91-VaC"/>
                                     <outlet property="articleImage" destination="oaM-kB-7vi" id="H5Z-HE-xIu"/>
                                     <outlet property="articleTitle" destination="0J0-Og-uVi" id="NsM-Mf-B82"/>
-                                    <segue destination="QtJ-0t-dY6" kind="showDetail" identifier="MBGArticleDetailsSegue" action="showViewController:sender:" id="T7z-rc-CCP"/>
+                                    <segue destination="7ef-T9-3Xh" kind="show" identifier="MBGWebViewSegue" id="eST-lJ-Gz8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -112,6 +112,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkw-cF-gIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="547" y="157"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="OHT-cC-iP6">
+            <objects>
+                <viewController id="7ef-T9-3Xh" customClass="MBGWebViewController" customModule="MBG_Feed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1C2-vX-vCB"/>
+                        <viewControllerLayoutGuide type="bottom" id="UkG-Lf-YJI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZmF-1E-a5g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yC6-gu-Hnx">
+                                <rect key="frame" x="20" y="72" width="552" height="520"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="yC6-gu-Hnx" secondAttribute="trailing" constant="8" id="9my-7i-jfI"/>
+                            <constraint firstItem="yC6-gu-Hnx" firstAttribute="leading" secondItem="ZmF-1E-a5g" secondAttribute="leadingMargin" id="Qbv-JT-sKh"/>
+                            <constraint firstItem="yC6-gu-Hnx" firstAttribute="leading" secondItem="ZmF-1E-a5g" secondAttribute="leadingMargin" constant="8" id="Sgx-bg-7N1"/>
+                            <constraint firstItem="yC6-gu-Hnx" firstAttribute="top" secondItem="1C2-vX-vCB" secondAttribute="bottom" constant="8" id="TSx-GF-U6J"/>
+                            <constraint firstItem="UkG-Lf-YJI" firstAttribute="top" secondItem="yC6-gu-Hnx" secondAttribute="bottom" constant="8" id="iZI-ob-lyt"/>
+                            <constraint firstItem="yC6-gu-Hnx" firstAttribute="top" secondItem="1C2-vX-vCB" secondAttribute="bottom" constant="8" id="kL0-Gm-YWM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yC6-gu-Hnx" secondAttribute="trailing" constant="8" id="mNi-Lg-W2v"/>
+                            <constraint firstItem="UkG-Lf-YJI" firstAttribute="top" secondItem="yC6-gu-Hnx" secondAttribute="bottom" constant="8" id="zn2-I1-fOZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Sgx-bg-7N1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="yC6-gu-Hnx" id="82u-KQ-JLc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NlG-6q-8w6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1362" y="165"/>
         </scene>
         <!--Full Article Table View Controller-->
         <scene sceneID="GHi-c8-qGH">
@@ -182,7 +226,7 @@
                                 <rect key="frame" x="0.0" y="151" width="600" height="214"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iQW-0Z-EcO" id="dgq-Ug-Uvz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="214"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="213.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="imN-Pd-Jks">
@@ -207,7 +251,7 @@
                                 <rect key="frame" x="0.0" y="365" width="600" height="207"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XEA-Uc-MbR" id="t60-cX-sE3">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="207"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="206.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9T-XF-dW2">
@@ -238,7 +282,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ji5-XW-C7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317" y="157"/>
+            <point key="canvasLocation" x="547" y="-607"/>
         </scene>
         <!--MindBodyGreen-->
         <scene sceneID="Xig-RJ-kbp">
