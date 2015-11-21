@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MBGArticleTableViewCell: UITableViewCell {
+class MBGArticleFeedTableViewCell: UITableViewCell {
 
     // The feed article's image
     @IBOutlet weak var articleImage: UIImageView!

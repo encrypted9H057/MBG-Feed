@@ -25,18 +25,28 @@ class MBGMainViewController: UITableViewController {
     // Feed images already downloaded are cached for table redraws
     var articleFeedImageCache = [String : UIImage]()
     
-    // Download the article feed and tell our tableView to reload
+    // Used in case the user is on a slow connection
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    
+    // Show the user an activity indicator while the article feed is downloaded
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
         
         loadInitialJSON()
     }
     
-    // Show the user a progress indicator while the article feed is download
+    // Download the article feed and tell our tableView to reload
     func loadInitialJSON() {
         let url = NSURL(string: kArticleJSONURL)!
         
         asynchronousDataFromUrl(url, completion: {(data, response, error) in
+            
+            self.activityIndicator.stopAnimating()
+            
             if (error != nil) {
                 print(error?.localizedDescription)
                 let title = "Problem fetching articles"
@@ -109,7 +119,7 @@ class MBGMainViewController: UITableViewController {
     
     // Return a properly initialized cell. Images are always overwritten
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MBGArticleTVCell") as! MBGArticleTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MBGArticleTVCell") as! MBGArticleFeedTableViewCell
         
         let dict = self.articleArray[indexPath.row] as! [String : AnyObject]
         let title = dict["title"] as! String
@@ -119,6 +129,7 @@ class MBGMainViewController: UITableViewController {
         
         cell.articleAuthor.text = author
         cell.articleTitle.text = title
+        
         if ((self.articleFeedImageCache[imageURLString]) != nil) {
             cell.articleImage.image = self.articleFeedImageCache[imageURLString]
         } else {
@@ -135,6 +146,26 @@ class MBGMainViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         
         articleFeedImageCache.removeAll();
+        
+    }
+    
+
+    // MARK: - Navigation
+    
+     //In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "MBGArticleDetailsSegue") {
+        
+            let fullArticleController = segue.destinationViewController as! MBGFullArticleTableViewController
+            
+            let iPath = self.tableView.indexPathForSelectedRow
+        
+            //Pass the selected object to the new view controller.
+            fullArticleController.articleDictionary = articleArray[(iPath?.row)!] as! [String : AnyObject]
+            let imageURLString = fullArticleController.articleDictionary["image"] as! String
+            fullArticleController.image = self.articleFeedImageCache[imageURLString]!
+        }
         
     }
 
